@@ -4,22 +4,22 @@ const Schema = mongoose.Schema;
 
 // un esquema es la estructura de datos de nuestra colección, definimos los tipos de datos
 // y sus relaciones
-const AplicacionesSchema = new Schema({
+const AppSchema = new Schema({
   Nombre: String,
   Descripcion: String,
   Puntaje: number,
   FechaLanzamiento: date,
   Creador: String,
-   celulares: [
+   Computadores: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Celulares"
+        ref: "Computadores"
       } 
     ]
-  // vinculamos las aplicaciones a un solo celular
+  // vinculamos las App a un solo compurdres
    
 });
 
 // exportamos el modelo
-var Aplicaciones = mongoose.model("Aplicaciones", AplicacionesSchema);
-module.exports = Aplicaciones;
+var App = mongoose.model("App", AppSchema);
+module.exports = App;

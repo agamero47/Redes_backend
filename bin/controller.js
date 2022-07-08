@@ -1,44 +1,44 @@
-const Celulares = require("./models/Computadores");
-// Crear un celular
-const postCelulares = (celulares, res)=>{
-  Celulares.create(celulares, (err, e)=>{
+const Computadores = require("./models/Computadores");
+// Crear un  Ceomputadores
+const postComputadores = (Computadores, res)=>{
+  Computadores.create(Computadores, (err, e)=>{
     if(err) throw err
     res.send(e);
   })
 }
-//Obterner todos los celulares
-const getCelulares = (res)=>{
-  Celulares.find({}, (err, e)=>{
+//Obterner todos los Computadores
+const getComputadores = (res)=>{
+  Computadores.find({}, (err, e)=>{
     if(err) throw err
     res.send(e)
   })
 }
-//Obterner un celular por su Id
-const getCelularesPorId = (id, res)=>{
-  Celulares.find({_id:id}, (err, e)=>{
+//Obterner un ccomputadoes por su Id
+const getComputadoresPorId = (id, res)=>{
+  Computadores.find({_id:id}, (err, e)=>{
     if(err) throw err
     res.send(e)
   })
 }
-// actualizar un Celular por su id
-const updateCelularesPorId = (id, Celulares, res)=>{
-  Celulares.findByIdAndUpdate({_id:id}, Celulares, (err, e)=>{
+// actualizar un Ceomputadores por su id
+const updateComputadoresPorId = (id, Computadores, res)=>{
+  Computadores.findByIdAndUpdate({_id:id}, Computadores, (err, e)=>{
     if(err) throw err
     res.send(e)
   })
 }
-// Eliminar un celular por su id
-const deleteCelulares = (id, res)=>{
-  Celulares.findByIdAndDelete({_id:id}, (err, e)=>{
+// Eliminar un Ceomputadores por su id
+const deleteComputadores = (id, res)=>{
+  Computadores.findByIdAndDelete({_id:id}, (err, e)=>{
     if(err) throw err
     res.send(e)
   })
 }
-// CRUD celulares
+// CRUD Computadores
 module.exports = {
-  postCelulares,
-  getCelulares,
-  getCelularesPorId,
-  updateCelularesPorId,
-  deleteCelulares
+  postComputadores,
+  getComputadores,
+  getComputadoresPorId,
+  updateComputadoresPorId,
+  deleteComputadores
 }
