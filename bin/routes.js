@@ -7,35 +7,35 @@ module.exports = (app)=>{
   })
 
   
-  // Traer todos los celulares
-  app.get("/celulares", (req, res)=>{    
-    controller.getCelulares(res)
+  // Traer todos los Computadores
+  app.get("/Computadores", (req, res)=>{    
+    controller.getComputadores(res)
   })
   
- //crear un celulares
-  app.post("/celulares", (req, res)=>{
-    let celulares = req.body
+ //crear un Computadores
+  app.post("/Computadores", (req, res)=>{
+    let Computadores = req.body
     console.log(req.body)
-    controller.postCelulares(celulares, res)
+    controller.postComputadores(Computadores, res)
   })
-  //traer celulares por su id
-  app.get("/celulares/;id",(req, res)=>{
+  //traer Computadores por su id
+  app.get("/Computadores/;id",(req, res)=>{
     let id = req.params.id
-    controller.getCelularesPorId(id, res)
+    controller.getComputadoresPorId(id, res)
   })
 
   //modificar un celular
-  app.put("/celulares/;id", (req, res)=>{
+  app.put("/Computadores/;id", (req, res)=>{
     let id = req.params.id;
-    let celulares = req.body
-    controller.updateCelularesPorId(id, celulares, res)
+    let Computadores = req.body
+    controller.updateComputadoresPorId(id, Computadores, res)
     
   })
 
 
-  //eliminar un celulares
-  app.delete("/celulares/;id", (req, res)=>{
+  //eliminar un Computadores
+  app.delete("/Computadores/;id", (req, res)=>{
     let id = req.params.id
-    controller.deleteCelulares(id, res)
+    controller.deleteComputadores(id, res)
   })
 } 
